@@ -47,4 +47,21 @@ describe("Form functionality", () => {
       .type("6")
       .should("have.value", "6");
   });
+
+  describe("Reservations submission", () => {
+    it("Should add a reservation card to homepage upon submission of input", () => {
+      cy.get("input[name=name]")
+        .type("Katherine")
+        .get("input[name=date]")
+        .type("Sept 17")
+        .get("input[name=time]")
+        .type("7:00")
+        .get("input[name=number]")
+        .type("6")
+        .get("button")
+        .click()
+        .get(".reservation-details")
+        .should("have.length", 10);
+    });
+  });
 });
