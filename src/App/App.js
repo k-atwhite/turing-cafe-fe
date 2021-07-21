@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Reservations from "../Reservations/Reservations";
 
 class App extends Component {
   constructor() {
