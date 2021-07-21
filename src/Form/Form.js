@@ -8,12 +8,25 @@ class Form extends Component {
       name: "",
       date: "",
       time: "",
-      number: null,
+      number: "",
     };
   }
 
   captureReservation = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+  };
+
+  submitReservation = (event) => {
+    event.preventDefault();
+    const newReservation = {
+      ...this.state,
+    };
+    this.props.addReservation(newReservation);
+    this.clearInput();
+  };
+
+  clearInput = () => {
+    this.setState({ name: "", date: "", time: "", number: "" });
   };
 
   render() {
@@ -45,9 +58,14 @@ class Form extends Component {
           placeholder="number of guests"
           name="number"
           value={this.state.number}
-          onChange={(event) => this.handleChange(event)}
+          onChange={(event) => this.captureReservation(event)}
         />
-        <button className="submit-button">SUBMIT</button>
+        <button
+          className="submit-button"
+          onClick={(event) => this.submitReservation(event)}
+        >
+          make reservation
+        </button>
       </form>
     );
   }
