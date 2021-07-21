@@ -5,11 +5,13 @@
   width: 15%;
   height: 40vh;
   margin: 2%;
+  border-radius: 5px;
 }
 
 .reservation-details {
   text-align: center;
   padding: 10px;
+  color: teal;
 }
 
 p {
