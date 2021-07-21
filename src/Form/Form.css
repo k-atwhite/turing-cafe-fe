@@ -2,10 +2,18 @@ form {
   margin: auto;
 }
 
-input,
+input {
+  margin: 5px;
+  width: 15%;
+  border: 2px solid teal;
+  border-radius: 5px;
+}
+
 button {
   margin: 5px;
   width: 15%;
   border: 2px solid teal;
-  color: teal;
+  background-color: teal;
+  color: white;
+  border-radius: 5px;
 }
